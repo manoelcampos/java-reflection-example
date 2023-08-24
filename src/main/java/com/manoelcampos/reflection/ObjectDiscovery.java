@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 /**
  * Dynamically discovers object fields, values, methods and constructors.
  * @author Manoel Campos da Silva Filho
+ * @see #print()
  */
 public class ObjectDiscovery {
     private final Field[] fields;
@@ -17,6 +18,11 @@ public class ObjectDiscovery {
     private final Constructor<?>[] constructors;
     private final Object object;
 
+    /**
+     * Creates an instance do discover object data and metadata.
+     * @param object
+     * @see #print()
+     */
     public ObjectDiscovery(final Object object) {
         Objects.requireNonNull(object, "The object to discovery metadata cannot be null");
 
