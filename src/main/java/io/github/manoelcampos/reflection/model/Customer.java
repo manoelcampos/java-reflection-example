@@ -1,4 +1,4 @@
-package com.manoelcampos.reflection.model;
+package io.github.manoelcampos.reflection.model;
 
 public class Customer {
     private Long id;

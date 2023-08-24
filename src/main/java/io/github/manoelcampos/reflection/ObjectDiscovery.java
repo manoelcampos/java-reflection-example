@@ -1,4 +1,4 @@
-package com.manoelcampos.reflection;
+package io.github.manoelcampos.reflection;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

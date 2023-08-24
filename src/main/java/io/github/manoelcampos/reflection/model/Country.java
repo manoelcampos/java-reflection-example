@@ -1,4 +1,4 @@
-package com.manoelcampos.reflection.model;
+package io.github.manoelcampos.reflection.model;
 
 /**
  * @author Manoel Campos da Silva Filho

@@ -1,7 +1,7 @@
 # Java Reflection Example [![build](https://github.com/manoelcampos/java-reflection-example/actions/workflows/build.yml/badge.svg)](https://github.com/manoelcampos/java-reflection-example/actions/workflows/build.yml)
 
 Shows how to dynamically discover object fields, values, methods and constructors.
-Below is the result of running the project's [Main.java](src/main/java/com/manoelcampos/reflection/Main.java) class,
+Below is the result of running the project's [Main.java](src/main/java/io/github/manoelcampos/reflection/Main.java) class,
 which discovers information about any object you provide.
 The sample below prints data about a `Customer` object.
 
@@ -39,4 +39,4 @@ The project was built using JDK 17.
 
 ## Running
 
-Open the project on you IDE and run the [Main.java](src/main/java/com/manoelcampos/reflection/Main.java) class.
+Open the project on you IDE and run the [Main.java](src/main/java/io/github/manoelcampos/reflection/Main.java) class.
