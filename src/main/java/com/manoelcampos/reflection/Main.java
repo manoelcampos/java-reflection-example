@@ -11,6 +11,10 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+/**
+ * Shows how to dynamically discover class fields, values, methods and constructors.
+ * @author Manoel Campos da Silva Filho
+ */
 public class Main {
     public static void main(String[] args) {
         final var country = new Country("Brasil");

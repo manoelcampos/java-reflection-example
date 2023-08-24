@@ -1,6 +1,6 @@
 # Java Reflection Example [![build](https://github.com/manoelcampos/java-reflection-example/actions/workflows/build.yml/badge.svg)](https://github.com/manoelcampos/java-reflection-example/actions/workflows/build.yml)
 
-Shows how to discover class fields, values, methods and constructors dynamically.
+Shows how to dynamically discover class fields, values, methods and constructors.
 Below is the result of running the project's [Main.java](src/main/java/com/manoelcampos/reflection/Main.java) class,
 which discovers information about any object you provide.
 The sample below prints data about a `Customer` object.
