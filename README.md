@@ -35,7 +35,7 @@ Customer Methods
 
 ## Requirements
 
-The project was build using JDK 17.
+The project was built using JDK 17.
 
 ## Running
 
