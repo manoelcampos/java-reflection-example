@@ -30,7 +30,7 @@ public class Main {
 
     /**
      * Allows direct access to private fields to read and write values.
-     * @param fields
+     * @param fields fields to set accessible
      */
     private static void setFieldsAccessible(final Field[] fields) {
         Arrays.stream(fields).forEach(f -> f.setAccessible(true));
@@ -51,26 +51,47 @@ public class Main {
 
     private static void printConstructors(final Object object, final Constructor<?>[] constructors) {
         System.out.printf("%s Constructors%n", object.getClass().getSimpleName());
-        Arrays.stream(constructors).forEach(c -> System.out.printf("  %s(%s):%n", c.getName(), getConstructorParamTypes(c)));
+        Arrays.stream(constructors).forEach(c -> System.out.printf("  %s(%s)%n", getConstructorSimpleName(c), getConstructorParamTypes(c)));
         System.out.println();
+    }
+
+    /**
+     * {@return the simple name of a constructor} That is, without the package name.
+     * @param c the construtor
+     */
+    private static String getConstructorSimpleName(final Constructor<?> c) {
+        final var array = c.getName().split("\\.");
+        return array[array.length-1];
     }
 
     private static void printMethods(final Object object, final Method[] methods) {
         System.out.printf("%s Methods%n", object.getClass().getSimpleName());
-        Arrays.stream(methods).forEach(m -> System.out.printf("  %s %s(%s):%n", getReturnType(m), m.getName(), getParameterTypes(m)));
+        Arrays.stream(methods).forEach(m -> System.out.printf("  %s %s(%s)%n", getReturnType(m), m.getName(), getParameterTypes(m)));
         System.out.println();
     }
 
+    /**
+     * {@return a String containing the simple name of a method's parameters}. That is, param types without the package name.
+     * @param m the method
+     */
     private static String getParameterTypes(final Method m) {
         return Arrays.stream(m.getParameterTypes()).map(Class::getSimpleName).collect(Collectors.joining(", "));
     }
 
-    private static String getConstructorParamTypes(final Constructor c) {
-        return Arrays.stream(c.getParameterTypes()).map(Class::getSimpleName).collect(Collectors.joining(", "));
-    }
-
+    /**
+     * {@return the simple name of a method return type}. That is, return type without the package name.
+     * @param m the method
+     */
     private static String getReturnType(final Method m) {
         return m.getReturnType().getSimpleName();
+    }
+
+    /**
+     * {@return a String containing the simple name of a constructor's parameters}. That is, param types without the package name.
+     * @param c the construtor
+     */
+    private static String getConstructorParamTypes(final Constructor<?> c) {
+        return Arrays.stream(c.getParameterTypes()).map(Class::getSimpleName).collect(Collectors.joining(", "));
     }
 
 }
