@@ -17,15 +17,20 @@ public class Main {
         final var state = new State("Tocantins", "TO", country);
         final var city = new City("Palmas", state);
         final var customer = new Customer("Manoel", 'M', "99999-9999", city);
-        final var objectClass = customer.getClass();
+
+        printObjectDataAndMetadata(customer);
+    }
+
+    private static void printObjectDataAndMetadata(final Object object) {
+        final var objectClass = object.getClass();
         final var fields = objectClass.getDeclaredFields();
         final var methods = objectClass.getDeclaredMethods();
         final var constructors = objectClass.getConstructors();
 
         setFieldsAccessible(fields);
-        printFields(customer, fields);
-        printConstructors(customer, constructors);
-        printMethods(customer, methods);
+        printFields(object, fields);
+        printConstructors(object, constructors);
+        printMethods(object, methods);
     }
 
     /**
